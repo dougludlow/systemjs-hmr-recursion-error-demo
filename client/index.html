@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+
+    <title>Test</title>
+
+    <script src="jspm_packages/system.src.js"></script>
+    <script src="jspm.config.js"></script>
+    <script src="bundle.js"></script>
+</head>
+<body>
+    <div id="main-container">
+        <my-app></my-app>
+    </div>
+
+    <script>
+        System.import('systemjs-hot-reloader').then(function (connect) {
+            connect({ host: 'http://localhost:8080' });
+            return System.import('app');
+        }).catch(console.error.bind(console));
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "jspm install",
+    "start": "node server.js",
+    "bundle": "jspm bundle 'app + css + text + plugin-typescript + plugin-babel' client/bundle.js"
+  },
+  "dependencies": {
+    "chokidar-socket-emitter": "^0.6.0",
+    "connect": "^3.6.0",
+    "jspm": "beta",
+    "serve-static": "^1.11.2"
+  },
+  "jspm": {
+    "name": "app",
+    "main": "main.ts",
+    "directories": {
+      "baseURL": "client",
+      "configFile": "client/jspm.config.js"
+    },
+    "dependencies": {
+      "@angular/forms": "npm:@angular/forms@^2.4.8",
+      "@angular/http": "npm:@angular/http@^2.4.8",
+      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^2.4.8",
+      "@angular/router": "npm:@angular/router@^3.4.8",
+      "bootstrap": "github:twbs/bootstrap@^3.3.7",
+      "core-js": "npm:core-js@^2.4.1",
+      "css": "github:systemjs/plugin-css@^0.1.32",
+      "debug": "npm:debug@^2.6.1",
+      "font-awesome": "npm:font-awesome@^4.7.0",
+      "jquery": "npm:jquery@^3.1.1",
+      "moment": "npm:moment@^2.17.1",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.21",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.10",
+      "socket.io-client": "github:socketio/socket.io-client@^1.7.2",
+      "systemjs-hmr": "npm:systemjs-hmr@^2.0.5",
+      "systemjs-hot-reloader": "github:alexisvincent/systemjs-hot-reloader@^1.0.0",
+      "text": "github:systemjs/plugin-text@^0.0.9"
+    },
+    "devDependencies": {
+      "child_process": "npm:jspm-nodelibs-child_process@^0.2.0",
+      "module": "npm:jspm-nodelibs-module@^0.2.0",
+      "net": "npm:jspm-nodelibs-net@^0.2.0",
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^7.0.4",
+      "typescript": "npm:typescript@^2.0.0"
+    },
+    "peerDependencies": {
+      "@angular/common": "npm:@angular/common@2.4.8",
+      "@angular/compiler": "npm:@angular/compiler@2.4.8",
+      "@angular/core": "npm:@angular/core@2.4.8",
+      "@angular/platform-browser": "npm:@angular/platform-browser@2.4.8",
+      "assert": "npm:jspm-nodelibs-assert@^0.2.0",
+      "buffer": "npm:jspm-nodelibs-buffer@^0.2.0",
+      "constants": "npm:jspm-nodelibs-constants@^0.2.0",
+      "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
+      "events": "npm:jspm-nodelibs-events@^0.2.0",
+      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
+      "os": "npm:jspm-nodelibs-os@^0.2.0",
+      "path": "npm:jspm-nodelibs-path@^0.2.0",
+      "process": "npm:jspm-nodelibs-process@^0.2.0",
+      "rxjs": "npm:rxjs@^5.0.1",
+      "stream": "npm:jspm-nodelibs-stream@^0.2.0",
+      "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
+      "timers": "npm:jspm-nodelibs-timers@^0.2.0",
+      "util": "npm:jspm-nodelibs-util@^0.2.0",
+      "vm": "npm:jspm-nodelibs-vm@^0.2.0",
+      "zone.js": "npm:zone.js@^0.7.2"
+    },
+    "overrides": {
+      "github:socketio/socket.io-client@1.7.2": {
+        "main": "dist/socket.io.js"
+      },
+      "github:twbs/bootstrap@3.3.7": {
+        "main": "js/bootstrap.js",
+        "dependencies": {
+          "jquery": "jspm:jquery@*"
+        },
+        "files": [
+          "dist",
+          "fonts",
+          "js",
+          "css"
+        ],
+        "meta": {
+          "js/bootstrap.js": {
+            "deps": [
+              "jquery"
+            ],
+            "exports": "$",
+            "format": "global"
+          }
+        }
+      },
+      "npm:@angular/common@2.4.8": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        },
+        "map": {
+          "@angular/common": ".",
+          "./testing": "./bundles/common-testing.umd.js"
+        }
+      },
+      "npm:@angular/compiler@2.4.8": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        },
+        "map": {
+          "@angular/compiler": ".",
+          "./testing": "./bundles/compiler-testing.umd.js"
+        }
+      },
+      "npm:@angular/core@2.4.8": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        },
+        "map": {
+          "@angular/core": ".",
+          "./testing": "./bundles/core-testing.umd.js"
+        }
+      },
+      "npm:@angular/http@2.4.8": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        },
+        "map": {
+          "@angular/http": ".",
+          "./testing": "./bundles/http-testing.umd.js"
+        }
+      },
+      "npm:@angular/platform-browser-dynamic@2.4.8": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        },
+        "map": {
+          "@angular/platform-browser-dynamic": ".",
+          "./testing": "./bundles/platform-browser-dynamic-testing.umd.js"
+        }
+      },
+      "npm:@angular/platform-browser@2.4.8": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        },
+        "map": {
+          "@angular/platform-browser": ".",
+          "./testing": "./bundles/platform-browser-testing.umd.js"
+        }
+      },
+      "npm:@angular/router@3.4.8": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        },
+        "map": {
+          "@angular/router": ".",
+          "./testing": "./bundles/router-testing.umd.js"
+        }
+      },
+      "npm:debug@2.6.1": {
+        "main": "src/browser.js",
+        "jspmNodeConversion": false,
+        "format": "cjs",
+        "map": {
+          "./src/browser.js": {
+            "node": "./src/node.js"
+          },
+          "./node.js": {
+            "browser": "./src/browser.js"
+          },
+          "fs": "@node/fs",
+          "net": "@node/net",
+          "tty": "@node/tty",
+          "util": "@node/util"
+        }
+      },
+      "npm:font-awesome@4.7.0": {
+        "main": "css/font-awesome.css!",
+        "jspmNodeConversion": false,
+        "registry": "jspm",
+        "dependencies": {
+          "css": "0.1"
+        }
+      },
+      "npm:inherits@2.0.3": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:jquery@3.1.1": {
+        "format": "amd"
+      },
+      "npm:moment@2.17.1": {
+        "jspmNodeConversion": false
+      },
+      "npm:ms@0.7.2": {
+        "jspmNodeConversion": false,
+        "format": "cjs"
+      },
+      "npm:reflect-metadata@0.1.10": {
+        "jspmNodeConversion": false,
+        "map": {
+          "crypto": {
+            "node": "@node/crypto",
+            "default": "@empty"
+          }
+        }
+      },
+      "npm:typescript@2.2.1": {
+        "browser": {},
+        "map": {
+          "buffer": "@empty",
+          "child_process": "@empty",
+          "fs": "@empty",
+          "path": "@empty",
+          "process": "@empty",
+          "readline": "@empty"
+        },
+        "dependencies": {
+          "source-map-support": "*"
+        }
+      }
+    }
+  }
+}
